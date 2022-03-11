@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Recursos/Enemies/spikeMan_walk1.png" type="Texture" id=2]
+[ext_resource path="res://Recursos/Enemies/spikeMan_walk2.png" type="Texture" id=3]
+[ext_resource path="res://Juego/Enemigos/Pinchon.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Correr",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 19, 5 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 16.0176
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 23.1893
+height = 3.87445
+
+[node name="Pinchon" type="KinematicBody2D" groups=[
+"Enemigos",
+]]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -48 )
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 1 )
+animation = "Correr"
+offset = Vector2( 0, 2 )
+
+[node name="detector_pared" type="RayCast2D" parent="."]
+position = Vector2( 0, -30 )
+z_index = 35
+z_as_relative = false
+enabled = true
+cast_to = Vector2( 30, 0 )
+collision_mask = 38
+collide_with_areas = true
+
+[node name="detector_vacio" type="RayCast2D" parent="."]
+position = Vector2( 35, -5 )
+z_index = 35
+z_as_relative = false
+enabled = true
+collision_mask = 2
+
+[node name="ColisionPies" type="CollisionShape2D" parent="."]
+position = Vector2( -1, -5 )
+shape = SubResource( 2 )
+
+[node name="ColisionCuerpo" type="CollisionShape2D" parent="."]
+position = Vector2( -0.25, -33.5 )
+shape = SubResource( 3 )
+
+[node name="DetectarJugador" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DetectarJugador"]
+polygon = PoolVector2Array( -10.5352, -59.0973, 7.60023, -59.0973, -0.872871, -92.3951 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectarJugador"]
+position = Vector2( -0.331818, -34.8409 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="DetectarJugador" to="." method="_on_DetectarJugador_body_entered"]

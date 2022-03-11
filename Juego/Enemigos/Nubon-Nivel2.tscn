@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Juego/Enemigos/Nubon.tscn" type="PackedScene" id=1]
+
+[node name="Nubon-Nivel2" instance=ExtResource( 1 )]
+modulate = Color( 0.803922, 0.803922, 0.803922, 1 )
+nubon_nivel = "nivel2"

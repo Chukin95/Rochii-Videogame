@@ -1,0 +1,436 @@
+[gd_scene load_steps=48 format=2]
+
+[ext_resource path="res://Juego/HUD/MenuPrincipal.gd" type="Script" id=1]
+[ext_resource path="res://Recursos/Particles/agua.png" type="Texture" id=2]
+[ext_resource path="res://Recursos/Enemies/cloud.png" type="Texture" id=3]
+[ext_resource path="res://Recursos/Backgrounds/clouds_4.png" type="Texture" id=4]
+[ext_resource path="res://Recursos/Backgrounds/clouds_1.png" type="Texture" id=5]
+[ext_resource path="res://Recursos/Backgrounds/clouds_3.png" type="Texture" id=6]
+[ext_resource path="res://Recursos/Sounds FX/musica_we_come_alive.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Recursos/Backgrounds/bg_layer3.png" type="Texture" id=8]
+[ext_resource path="res://Recursos/Backgrounds/fondo_dia.png" type="Texture" id=9]
+[ext_resource path="res://Recursos/Backgrounds/clouds_2.png" type="Texture" id=10]
+[ext_resource path="res://Recursos/Backgrounds/bg_layer4.png" type="Texture" id=11]
+[ext_resource path="res://Juego/HUD/Boton.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Recursos/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://Recursos/Fonts/Kenney Pixel.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (14).png" type="Texture" id=16]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (4).png" type="Texture" id=17]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (17).png" type="Texture" id=18]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (20).png" type="Texture" id=19]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (5).png" type="Texture" id=20]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (18).png" type="Texture" id=21]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (1).png" type="Texture" id=22]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (11).png" type="Texture" id=23]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (12).png" type="Texture" id=24]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (13).png" type="Texture" id=25]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (9).png" type="Texture" id=26]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (10).png" type="Texture" id=27]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (7).png" type="Texture" id=28]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (19).png" type="Texture" id=29]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (6).png" type="Texture" id=30]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (3).png" type="Texture" id=31]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (2).png" type="Texture" id=32]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (16).png" type="Texture" id=33]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (15).png" type="Texture" id=34]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Run (8).png" type="Texture" id=35]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 15 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 35 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 16 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 29 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 2
+emission_box_extents = Vector3( 7000, 1000, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 500, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.588235, 0.588235, 0.784314 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 14 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.105882, 0.254902, 1, 1 )
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0.0470588, 0.278431, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0.00392157, 0.407843, 1 )
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.294118, 0.294118, 0.294118, 1 )
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.00784314, 0.556863, 0.411765, 1 )
+border_width_bottom = 10
+
+[sub_resource type="Animation" id=11]
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "CuteGirl"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 56, 656 ), Vector2( 1232, 656 ), Vector2( 64, 656 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=13]
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="MenuPrincipal" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxFondo" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -100
+z_as_relative = false
+motion_mirroring = Vector2( 1024, 1024 )
+
+[node name="Fondo_Dia" type="TextureRect" parent="ParallaxBackground/ParallaxFondo"]
+margin_left = -456.0
+margin_top = -240.0
+margin_right = 6296.0
+margin_bottom = 1032.0
+texture = ExtResource( 9 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLargaDistancia" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 1 )
+
+[node name="TextureLargaDistancia" type="TextureRect" parent="ParallaxBackground/ParallaxLargaDistancia"]
+margin_left = -816.0
+margin_top = 136.0
+margin_right = 13824.0
+margin_bottom = 1216.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLargaDistancia2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+
+[node name="TextureLargaDistancia" type="TextureRect" parent="ParallaxBackground/ParallaxLargaDistancia2"]
+margin_left = -744.0
+margin_top = -88.0
+margin_right = 13896.0
+margin_bottom = 992.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLargaDistancia3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+
+[node name="TextureLargaDistancia" type="TextureRect" parent="ParallaxBackground/ParallaxLargaDistancia3"]
+margin_left = -560.0
+margin_top = 40.0
+margin_right = 14432.0
+margin_bottom = 1120.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLargaDistancia4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 1 )
+
+[node name="TextureLargaDistancia" type="TextureRect" parent="ParallaxBackground/ParallaxLargaDistancia4"]
+margin_left = -816.0
+margin_top = -32.0
+margin_right = 14352.0
+margin_bottom = 1048.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxMediaDistancia" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 2046, 0 )
+
+[node name="TextureMediaDistancia" type="TextureRect" parent="ParallaxBackground/ParallaxMediaDistancia"]
+margin_left = -312.0
+margin_top = -808.0
+margin_right = 6400.0
+margin_bottom = 1240.0
+texture = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBajaDistancia" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureBajaDistancia" type="TextureRect" parent="ParallaxBackground/ParallaxBajaDistancia"]
+margin_left = -240.0
+margin_top = -864.0
+margin_right = 6432.0
+margin_bottom = 1184.0
+texture = ExtResource( 11 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Creditos" type="Label" parent="."]
+margin_left = 992.0
+margin_top = 680.0
+margin_right = 1270.0
+margin_bottom = 712.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "By Cristian Gomez (Chukin95)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 232, 96 )
+texture = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 56, 656 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[node name="Fondo" type="Particles2D" parent="."]
+position = Vector2( 648, 152 )
+scale = Vector2( 0.1, 0.1 )
+amount = 80
+lifetime = 5.0
+randomness = 0.5
+process_material = SubResource( 3 )
+texture = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0, 0, 0, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 8.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -276.0
+margin_top = -244.0
+margin_right = 276.0
+margin_bottom = 244.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -259.5
+margin_top = -229.0
+margin_right = 259.5
+margin_bottom = 229.0
+custom_constants/separation = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuPrincipal" type="Label" parent="Panel/VBoxContainer"]
+margin_right = 519.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 5 )
+text = "MENU PRINCIPAL"
+align = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
+margin_top = 82.0
+margin_right = 519.0
+margin_bottom = 86.0
+
+[node name="Tutorial" parent="Panel/VBoxContainer" instance=ExtResource( 12 )]
+margin_top = 92.0
+margin_right = 519.0
+margin_bottom = 179.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "Tutorial"
+
+[node name="NuevaPartida" parent="Panel/VBoxContainer" instance=ExtResource( 12 )]
+margin_top = 185.0
+margin_right = 519.0
+margin_bottom = 272.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "Nueva Partida"
+
+[node name="Opciones" parent="Panel/VBoxContainer" instance=ExtResource( 12 )]
+margin_top = 278.0
+margin_right = 519.0
+margin_bottom = 365.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+disabled = true
+text = "Opciones"
+
+[node name="Salir" parent="Panel/VBoxContainer" instance=ExtResource( 12 )]
+margin_top = 371.0
+margin_right = 519.0
+margin_bottom = 458.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "Salir"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -11.107
+autoplay = true
+bus = "Musica"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Aclarar"
+anims/Aclarar = SubResource( 11 )
+anims/CuteGirl = SubResource( 12 )
+anims/Oscurecer = SubResource( 13 )
+
+[node name="Tutorial_MenuPrincipal" type="Timer" parent="."]
+one_shot = true
+
+[node name="NuevaPartida_MenuPrinciapal" type="Timer" parent="."]
+one_shot = true
+
+[node name="Salir_MenuPrincipal" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="button_up" from="Panel/VBoxContainer/Tutorial" to="." method="_Boton_Tutorial"]
+[connection signal="button_up" from="Panel/VBoxContainer/NuevaPartida" to="." method="_Boton_NuevaPartida"]
+[connection signal="button_up" from="Panel/VBoxContainer/Salir" to="." method="_Boton_Salir"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_AnimationPlayer_Animacion_Terminada"]
+[connection signal="timeout" from="Tutorial_MenuPrincipal" to="." method="_Boton_Tutorial_MenuPrincipal"]
+[connection signal="timeout" from="NuevaPartida_MenuPrinciapal" to="." method="_Timer_NuevaPartida_MenuPrinciapal"]
+[connection signal="timeout" from="Salir_MenuPrincipal" to="." method="_Timer_Salir_MenuPrincipal"]

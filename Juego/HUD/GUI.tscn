@@ -1,0 +1,580 @@
+[gd_scene load_steps=53 format=2]
+
+[ext_resource path="res://Recursos/Items/platformPack_item017.png" type="Texture" id=1]
+[ext_resource path="res://Recursos/Monedas/Bronze/1/Bronze_1.png" type="Texture" id=2]
+[ext_resource path="res://Recursos/Items/platformPack_item014.png" type="Texture" id=3]
+[ext_resource path="res://Recursos/Fonts/Kenney Future.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Recursos/Items/platformPack_item012.png" type="Texture" id=5]
+[ext_resource path="res://Recursos/Items/llaves1.png" type="Texture" id=6]
+[ext_resource path="res://Recursos/Items/llaves2.png" type="Texture" id=7]
+[ext_resource path="res://Recursos/HUD/coin_silver.png" type="Texture" id=8]
+[ext_resource path="res://Juego/HUD/GUI.gd" type="Script" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=11]
+[ext_resource path="res://Recursos/Personajes/CuteGirl/Idle (16).png" type="Texture" id=16]
+[ext_resource path="res://Recursos/Monedas/Bronze/1/Bronze_3.png" type="Texture" id=18]
+[ext_resource path="res://Recursos/Monedas/Bronze/1/Bronze_5.png" type="Texture" id=19]
+[ext_resource path="res://Recursos/Monedas/Bronze/1/Bronze_7.png" type="Texture" id=20]
+[ext_resource path="res://Recursos/Monedas/Bronze/1/Bronze_10.png" type="Texture" id=21]
+[ext_resource path="res://Recursos/Monedas/Bronze/1/Bronze_2.png" type="Texture" id=22]
+[ext_resource path="res://Recursos/Monedas/Bronze/1/Bronze_4.png" type="Texture" id=23]
+[ext_resource path="res://Recursos/Monedas/Bronze/1/Bronze_8.png" type="Texture" id=24]
+[ext_resource path="res://Recursos/Monedas/Bronze/1/Bronze_6.png" type="Texture" id=25]
+[ext_resource path="res://Recursos/Monedas/Bronze/1/Bronze_9.png" type="Texture" id=26]
+[ext_resource path="res://Recursos/Monedas/Silver/estrella/Silver_29.png" type="Texture" id=27]
+[ext_resource path="res://Recursos/Monedas/Silver/estrella/Silver_28.png" type="Texture" id=28]
+[ext_resource path="res://Recursos/Monedas/Silver/estrella/Silver_25.png" type="Texture" id=29]
+[ext_resource path="res://Recursos/Monedas/Gold/corazon/Gold_13.png" type="Texture" id=30]
+[ext_resource path="res://Recursos/Monedas/Gold/corazon/Gold_17.png" type="Texture" id=31]
+[ext_resource path="res://Recursos/Monedas/Gold/corazon/Gold_18.png" type="Texture" id=32]
+[ext_resource path="res://Recursos/Monedas/Gold/corazon/Gold_14.png" type="Texture" id=33]
+[ext_resource path="res://Recursos/Monedas/Gold/corazon/Gold_20.png" type="Texture" id=34]
+[ext_resource path="res://Recursos/Monedas/Silver/estrella/Silver_21.png" type="Texture" id=35]
+[ext_resource path="res://Recursos/Monedas/Gold/corazon/Gold_11.png" type="Texture" id=36]
+[ext_resource path="res://Recursos/Monedas/Gold/corazon/Gold_16.png" type="Texture" id=37]
+[ext_resource path="res://Recursos/Monedas/Gold/corazon/Gold_15.png" type="Texture" id=38]
+[ext_resource path="res://Recursos/Monedas/Gold/corazon/Gold_19.png" type="Texture" id=39]
+[ext_resource path="res://Recursos/Monedas/Silver/estrella/Silver_30.png" type="Texture" id=40]
+[ext_resource path="res://Recursos/Monedas/Silver/estrella/Silver_27.png" type="Texture" id=41]
+[ext_resource path="res://Recursos/Monedas/Silver/estrella/Silver_22.png" type="Texture" id=42]
+[ext_resource path="res://Recursos/Monedas/Silver/estrella/Silver_24.png" type="Texture" id=43]
+[ext_resource path="res://Recursos/Monedas/Silver/estrella/Silver_26.png" type="Texture" id=44]
+[ext_resource path="res://Recursos/Monedas/Gold/corazon/Gold_12.png" type="Texture" id=45]
+[ext_resource path="res://Recursos/Monedas/Silver/estrella/Silver_23.png" type="Texture" id=46]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "Llaves0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "Llaves3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "Llaves1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "Llaves2",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Recursos/Fonts/Kenney High Square.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+outline_size = 1
+font_data = SubResource( 2 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "girar_bronce",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 45 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 39 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "girar_oro",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 42 ), ExtResource( 46 ), ExtResource( 43 ), ExtResource( 29 ), ExtResource( 44 ), ExtResource( 41 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 40 ) ],
+"loop": true,
+"name": "girar_plata",
+"speed": 10.0
+} ]
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+outline_size = 1
+font_data = ExtResource( 4 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=13]
+resource_name = "idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Corazon:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Vida:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.5
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath("Corazon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.01, 0.01 ), Vector2( 5, 5 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Corazon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 608, 368 ), Vector2( 480, 368 ), Vector2( 1130, 110 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Corazon:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Corazon:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "salud_anim_finalizada"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("AnimationPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "stop"
+} ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Vida:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.001, 0.001 ), Vector2( 0.326923, 0.281938 ), Vector2( 0.0576923, 0.0352421 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Vida:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 608, 368 ), Vector2( 568, 368 ), Vector2( 72, 56 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Vida:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Vida:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "vida_anim_finalizada"
+} ]
+}
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 792.0 ]
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.26487
+margin_bottom = 0.264893
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -87.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContenedorLlaves" type="Control" parent="Control/TextureRect"]
+visible = false
+margin_left = -1179.18
+margin_top = 14.0
+margin_right = -1037.18
+margin_bottom = 35.0
+rect_min_size = Vector2( 18, 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IconoLlaves" type="AnimatedSprite" parent="Control/TextureRect/ContenedorLlaves"]
+visible = false
+position = Vector2( -10, 11 )
+frames = SubResource( 1 )
+animation = "Llaves2"
+playing = true
+centered = false
+
+[node name="ContadorLlaves" type="Label" parent="Control/TextureRect"]
+visible = false
+margin_left = -1176.66
+margin_top = 37.545
+margin_right = -1034.66
+margin_bottom = 77.545
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TextureRect"]
+anchor_left = 0.091
+anchor_right = 1.0
+anchor_bottom = 1.286
+margin_left = -72.007
+margin_top = 14.0
+margin_bottom = 35.996
+grow_horizontal = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContenedorMonedas" type="TextureRect" parent="Control/TextureRect/VBoxContainer"]
+margin_right = 142.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+
+[node name="IconoMonedas" type="AnimatedSprite" parent="Control/TextureRect/VBoxContainer/ContenedorMonedas"]
+position = Vector2( 22, 44 )
+scale = Vector2( 0.05, 0.05 )
+frames = SubResource( 4 )
+animation = "girar_bronce"
+frame = 6
+playing = true
+
+[node name="ContadorMonedas" type="Label" parent="Control/TextureRect/VBoxContainer"]
+margin_top = 22.0
+margin_right = 142.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 5 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="ContenedorSalud" type="Control" parent="Control/TextureRect/VBoxContainer"]
+margin_top = 62.0
+margin_right = 142.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 18, 18 )
+
+[node name="IconoSalud" type="AnimatedSprite" parent="Control/TextureRect/VBoxContainer/ContenedorSalud"]
+position = Vector2( -10, 11 )
+frames = SubResource( 6 )
+playing = true
+centered = false
+
+[node name="ContadorSalud" type="Label" parent="Control/TextureRect/VBoxContainer"]
+margin_top = 84.0
+margin_right = 142.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 5 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContenedorVidas" type="Control" parent="Control/TextureRect/VBoxContainer"]
+visible = false
+margin_top = 124.0
+margin_right = 142.0
+margin_bottom = 142.0
+rect_min_size = Vector2( 18, 18 )
+
+[node name="IconoVidas" type="AnimatedSprite" parent="Control/TextureRect/VBoxContainer/ContenedorVidas"]
+visible = false
+position = Vector2( 7, 25 )
+scale = Vector2( 0.07, 0.07 )
+frames = SubResource( 7 )
+playing = true
+centered = false
+
+[node name="ContadorVidas" type="Label" parent="Control/TextureRect/VBoxContainer"]
+visible = false
+margin_top = 135.0
+margin_right = 142.0
+margin_bottom = 171.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 5 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/TextureRect"]
+anchor_left = 0.091
+anchor_right = 1.0
+anchor_bottom = 1.286
+margin_left = -1136.01
+margin_top = -10.2649
+margin_right = -1070.0
+margin_bottom = 131.731
+grow_horizontal = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContenedorVidas" type="Control" parent="Control/TextureRect/VBoxContainer2"]
+margin_top = 23.0
+margin_right = 136.0
+margin_bottom = 41.0
+rect_min_size = Vector2( 18, 18 )
+
+[node name="IconoVidas" type="AnimatedSprite" parent="Control/TextureRect/VBoxContainer2/ContenedorVidas"]
+position = Vector2( 7, 25 )
+scale = Vector2( 0.07, 0.07 )
+frames = SubResource( 7 )
+playing = true
+centered = false
+
+[node name="ContadorVidas" type="Label" parent="Control/TextureRect/VBoxContainer2"]
+margin_top = 45.0
+margin_right = 136.0
+margin_bottom = 81.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 5 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContenedorLlaves" type="Control" parent="Control/TextureRect/VBoxContainer2"]
+margin_top = 85.0
+margin_right = 136.0
+margin_bottom = 103.0
+rect_min_size = Vector2( 18, 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IconoLlaves" type="AnimatedSprite" parent="Control/TextureRect/VBoxContainer2/ContenedorLlaves"]
+position = Vector2( -6.10352e-05, 9.00002 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 1 )
+animation = "Llaves2"
+playing = true
+centered = false
+
+[node name="ContadorLlaves" type="Label" parent="Control/TextureRect/VBoxContainer2"]
+margin_top = 107.0
+margin_right = 136.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control/TextureRect"]
+margin_left = -609.0
+margin_top = 13.7351
+margin_right = -434.0
+margin_bottom = 71.7351
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContenedorPuntos" type="Control" parent="Control/TextureRect/VBoxContainer3"]
+margin_right = 175.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 18, 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IconoPuntos" type="AnimatedSprite" parent="Control/TextureRect/VBoxContainer3/ContenedorPuntos"]
+position = Vector2( 7, 25 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 8 )
+playing = true
+centered = false
+
+[node name="ContadorPuntos" type="Label" parent="Control/TextureRect/VBoxContainer3"]
+margin_top = 22.0
+margin_right = 175.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 5 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Corazon" type="AnimatedSprite" parent="."]
+position = Vector2( 608, 368 )
+scale = Vector2( 0.01, 0.01 )
+z_index = -1
+frames = SubResource( 9 )
+centered = false
+
+[node name="Vida" type="Sprite" parent="."]
+position = Vector2( 608, 368 )
+scale = Vector2( 0.001, 0.001 )
+z_index = -1
+texture = ExtResource( 11 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 13 )
+anims/nueva_salud = SubResource( 14 )
+anims/nueva_vida = SubResource( 12 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

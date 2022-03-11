@@ -1,0 +1,140 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Recursos/Enemies/flyMan_still_fly.png" type="Texture" id=1]
+[ext_resource path="res://Recursos/Enemies/flyMan_fly.png" type="Texture" id=2]
+[ext_resource path="res://Juego/Enemigos/Ventilon.gd" type="Script" id=3]
+[ext_resource path="res://Recursos/Enemies/flyMan_still_stand.png" type="Texture" id=4]
+[ext_resource path="res://Recursos/Enemies/flyMan_stand.png" type="Texture" id=5]
+[ext_resource path="res://Recursos/Enemies/flyMan_jump.png" type="Texture" id=6]
+[ext_resource path="res://Recursos/Enemies/flyMan_still_jump.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "Muerte",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "Volando",
+"speed": 17.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Volando"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 3, 4, 5, 6, 7, 8, 9, 0, 1, 3, 4, 5, 6, 7, 8, 9 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9, 1.3, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 200 ), Vector2( 0, 0 ), Vector2( 0, -200 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColisionCuerpo:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9, 1.3, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -16.6675 ), Vector2( 0, 179 ), Vector2( 0, -16.668 ), Vector2( 0, -217 ), Vector2( 0, -16.668 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MatarVentilon/ColisionMatar:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9, 1.3, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 41.3858 ), Vector2( 0, 237 ), Vector2( 0, 41.3858 ), Vector2( 0, -160 ), Vector2( 0, 41.386 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColisionHerir/ColisionHerir:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9, 1.3, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.378374, -17.4055 ), Vector2( -0.378, 178.3 ), Vector2( -0.378374, -17.4055 ), Vector2( -0.378374, -219.571 ), Vector2( -0.378374, -17.4055 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 34.656, 34.0781 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 48.3591, 46.9445 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 34.9085, 10.4432 )
+
+[node name="Ventilon" type="KinematicBody2D" groups=[
+"Enemigos",
+]]
+scale = Vector2( 0.7, 0.7 )
+collision_layer = 16
+collision_mask = 8
+script = ExtResource( 3 )
+puede_morir = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+z_as_relative = false
+frames = SubResource( 1 )
+animation = "Muerte"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Volando"
+anims/Volando = SubResource( 2 )
+
+[node name="ColisionCuerpo" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -16.6675 )
+shape = SubResource( 3 )
+
+[node name="ColisionHerir" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 8
+
+[node name="ColisionHerir" type="CollisionShape2D" parent="ColisionHerir"]
+position = Vector2( -0.378374, -17.4055 )
+shape = SubResource( 4 )
+
+[node name="MatarVentilon" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 8
+
+[node name="ColisionMatar" type="CollisionShape2D" parent="MatarVentilon"]
+position = Vector2( 0, 40.6282 )
+shape = SubResource( 5 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="body_entered" from="ColisionHerir" to="." method="_on_ColisionHerir_body_entered"]
+[connection signal="body_entered" from="MatarVentilon" to="." method="_on_MatarVentilon_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
